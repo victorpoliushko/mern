@@ -62,10 +62,7 @@ router.post(
       if (!user) {
         return res.status(400).json({ message: "User not found" });
       }
-      //not sure
-      const hashedPassword = await bcryptjs.hash(password, 12);
-      //
-      const isMatch = await bcryptjs.compare(hashedPassword, user.password);
+      const isMatch = await bcryptjs.compare(password, user.password);
       if (!isMatch) {
         return res.status(400).json({ message: "Invalid password" });
       }
