@@ -24,8 +24,9 @@ export const LinksList = ({ links }) => {
                 <td>{index}</td>
                 <td>{link.from}</td>
                 <td>{link.to}</td>
+                {console.log("Link id: ", link._id)}
                 <td>
-                  <Link to={`/delatil/${link._id}`}>Open</Link>
+                  <Link to={`/detail/${link._id}`}>Open</Link>
                 </td>
               </tr>
             );
